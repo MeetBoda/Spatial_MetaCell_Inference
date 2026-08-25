@@ -70,7 +70,9 @@ ENVI employs a conditional Variational Autoencoder (cVAE) with an auxiliary moda
 ### 3. MetaQ (Single-Cell Vector Quantization)
 MetaQ applies vector quantization via a one-encoder, two-decoder deep learning framework to construct compact codebook representations ($c_j$):
 $$\mathcal{L}_{\text{MetaQ}} = \sum_i \left( \|x_i - \hat{x}_i\|^2 + \lambda \|x_i - \hat{x}_i^{\text{meta}}\|^2 \right) + \beta \cdot \text{Reg}$$
-Where $c_j = \frac{1}{|S_j|} \sum_{i \in S_j} z_i$ represents the metacell embedding vector.
+Where the metacell embedding vector $c_j$ is computed as:
+$$c_j = \frac{1}{|S_j|} \sum_{i \in S_j} z_i$$
+
 
 ---
 
